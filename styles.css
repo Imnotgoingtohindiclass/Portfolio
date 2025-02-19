@@ -56,7 +56,7 @@ body {
 .card {
     width: 100%;
     color: white;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 20px;
     font-size: xx-large;
     justify-content: center;
@@ -178,15 +178,12 @@ background: radial-gradient(
 .experience-card::after {  
 background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.4),
+    rgba(200, 200, 200, 0.6),
     transparent 40%
     );
     z-index: 1;
 }
 
-.experience-card-content {
-    background-color: red;
-}
 
 .experience-card > .experience-card-content {
     background-color: var(--card-color);
@@ -204,7 +201,7 @@ background: radial-gradient(
 .experience-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .experience-card h3 {
     margin: 1rem 0 0.5rem;
