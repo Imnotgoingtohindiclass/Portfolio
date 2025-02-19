@@ -142,11 +142,11 @@ body {
     box-sizing: border-box;
     max-width: 500px; /* Ensures all boxes remain the same size */
     aspect-ratio: 3 / 4;
-    transition: transform 0.3s;
+    transition: transform 0.2s linear;
 }
 
 .experience-card:hover {
-    transition: transform 0.3s;
+    transition: transform 0.2s linear;
 }
 
 .experience-card:hover::before {
@@ -169,7 +169,7 @@ body {
 .experience-card::before {
 background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.07),
     transparent 40%
     );
     z-index: 3;
