@@ -141,6 +141,7 @@ body {
     box-sizing: border-box;
     max-width: 500px; /* Ensures all boxes remain the same size */
     aspect-ratio: 3 / 4;
+    transition: transform 0.1s;
 }
 
 .experience-card:hover::before {

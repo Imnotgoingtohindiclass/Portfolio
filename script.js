@@ -71,3 +71,31 @@ document.getElementById("experiences").onmousemove = e => {
     card.style.setProperty("--mouse-y", `${y}px`);
     };
 }
+
+const cards = document.querySelectorAll('.experience-card')
+
+cards.forEach(el => {
+    const height = el.clientHeight
+    const width = el.clientWidth
+
+    el.addEventListener('mousemove', (e) => {
+        const xVal = e.layerX
+        const yVal = e.layerY
+        const yRotation = 3 * ((xVal - width / 2) / width)
+        const xRotation = -3 * ((yVal - height / 2) / height)
+        const transformString = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`
+        el.style.transform = transformString
+    })
+
+    el.addEventListener('mouseout', () => {
+        el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
+    })
+
+    el.addEventListener('mousedown', () => {
+        el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+    })
+
+    el.addEventListener('mouseup', () => {
+        el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+    })
+})
