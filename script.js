@@ -10,32 +10,32 @@ window.onscroll = function() {
         prevScrollpos = currentScrollPos;
 }
 
-console.log(window.innerWidth)
+// console.log(window.innerWidth)
 
-function matchHeight() {
-    let div1 = document.getElementById("gradient");
-    let div2 = document.getElementById("card");
+// function matchHeight() {
+//     let div1 = document.getElementById("gradient");
+//     let div2 = document.getElementById("card");
 
-    if (!div1 || !div2) return; // Ensure both divs exist
+//     if (!div1 || !div2) return; // Ensure both divs exist
 
-    // Reset height to auto to allow recalculation in case of content changes
-    div1.style.height = "auto";
-    div2.style.height = "auto";
+//     // Reset height to auto to allow recalculation in case of content changes
+//     div1.style.height = "auto";
+//     div2.style.height = "auto";
 
-    // Get the new max height and apply it
-    let maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
-    div1.style.height = maxHeight + "px";
-    div2.style.height = maxHeight + "px";
-}
+//     // Get the new max height and apply it
+//     let maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
+//     div1.style.height = maxHeight + "px";
+//     div2.style.height = maxHeight + "px";
+// }
 
-// Run when the page loads and when the window resizes
-window.addEventListener("load", matchHeight);
-window.addEventListener("resize", matchHeight);
+// // Run when the page loads and when the window resizes
+// window.addEventListener("load", matchHeight);
+// window.addEventListener("resize", matchHeight);
 
-// If the content inside divs might change dynamically, use a MutationObserver
-const observer = new MutationObserver(matchHeight);
-observer.observe(document.getElementById("div1"), { childList: true, subtree: true });
-observer.observe(document.getElementById("div2"), { childList: true, subtree: true });
+// // If the content inside divs might change dynamically, use a MutationObserver
+// const observer = new MutationObserver(matchHeight);
+// observer.observe(document.getElementById("div1"), { childList: true, subtree: true });
+// observer.observe(document.getElementById("div2"), { childList: true, subtree: true });
 
 
 // document.querySelectorAll(".experience-card").forEach(card => {
@@ -61,13 +61,13 @@ observer.observe(document.getElementById("div2"), { childList: true, subtree: tr
 // });
 
 
-const blob = document.getElementById("blob");
+document.getElementById("experiences").onmousemove = e => {
+    for(const card of document.getElementsByClassName("experience-card")) {
+    const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
 
-window.onpointermove = event => { 
-    const { clientX, clientY } = event;
-
-    blob.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-    }, { duration: 3000, fill: "forwards" });
-};
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+    };
+}

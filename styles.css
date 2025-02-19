@@ -1,6 +1,9 @@
 :root {
-    --navbarh: 40px
+    --navbarh: 40px;
+    --bg-color: rgb(20, 20, 20);
+    --card-color: rgb(23, 23, 23);
 }
+
 
 * {
     font-family: 'Jetbrains Mono' !important;
@@ -11,6 +14,7 @@ body {
     background-color: #161515;
     color: white;
     text-align: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     padding-top: var(--navbarh);
@@ -101,19 +105,36 @@ body {
 }
 
 /* CSS for Experiences Section */
-.experiences {
+
+#experiences {
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;  
+    width: 100vw;
+    align-items: center;
     justify-content: center;
-    padding: 2rem;
-    background-color: #121212;
+    padding: 0px;
+    background-color: #00000000;
 }
+
+#experiences:hover > .experience-card::after {
+    opacity: 1;
+}
+
 .experience-card {
+    cursor: pointer;
+    display: flex;
+    height: 700px;
+    flex-direction: column;
+    position: relative;
+    width: 300px;  
     background-color: #1e1e1e;
     border-radius: 15px;
-    padding: 1rem;
+    padding: 0.25rem;
     flex: 1 1 500px; /* Fixed size for all cards */
-    margin: 1rem;
+    margin: 0.25rem;
     text-align: center;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
@@ -121,6 +142,55 @@ body {
     max-width: 500px; /* Ensures all boxes remain the same size */
     aspect-ratio: 3 / 4;
 }
+
+.experience-card:hover::before {
+    opacity: 1;
+}
+
+.experience-card::before,
+.experience-card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.experience-card::before {
+background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+    );
+    z-index: 3;
+}
+
+.experience-card::after {  
+background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+    );
+    z-index: 1;
+}
+
+.experience-card > .experience-card-content {
+background-color: var(--card-color);
+border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Experience Card Contents */
 .experience-card img {
     width: 100%;
     height: auto;
@@ -134,50 +204,6 @@ body {
     font-size: 0.9rem;
     color: #ccc;
 }
-
-.experience-card {
-    background-color: #1e1e1e;
-    border-radius: 15px;
-    padding: 1rem;
-    flex: 1 1 500px;
-    margin: 1rem;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    max-width: 500px;
-    aspect-ratio: 3 / 4;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.experience-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    border: 3px solid transparent;
-    transition: border-color 0.2s ease-in-out;
-    pointer-events: none;
-}
-
-.experience-card:hover {
-    transform: scale(1.05);
-}
-
-.experience-card:hover::before {
-    border-color: #ffcc00;
-}
-
-/* Dynamic glow effect */
-.experience-card.glow {
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
-}
-
 
 .IE-break {
     margin-top: 150px;
