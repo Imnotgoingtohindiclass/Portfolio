@@ -8,6 +8,7 @@
 * {
     font-family: 'Jetbrains Mono' !important;
     /* font-weight: bold */
+
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: var(--navbarh);
+    color: white;
 }
 
 
@@ -141,7 +143,11 @@ body {
     box-sizing: border-box;
     max-width: 500px; /* Ensures all boxes remain the same size */
     aspect-ratio: 3 / 4;
-    transition: transform 0.1s;
+    transition: transform 0.3s;
+}
+
+.experience-card:hover {
+    transition: transform 0.3s;
 }
 
 .experience-card:hover::before {
@@ -285,8 +291,6 @@ border-radius: inherit;
     object-fit:fill;
 }
 
-
-
 #navbar {
     border-left: 0px solid #2e2d2d;
     border-right: 0px solid #2e2d2d;
@@ -347,7 +351,7 @@ border-radius: inherit;
         rotate: 360deg;
     }
 }
-
+/* 
 #blob {
     background-color: white;
     height: 250px;
@@ -371,4 +375,5 @@ border-radius: inherit;
     position: fixed;
     z-index: -50;
     backdrop-filter: blur(12vmax);
-}
+} */
+

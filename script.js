@@ -90,12 +90,4 @@ cards.forEach(el => {
     el.addEventListener('mouseout', () => {
         el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
     })
-
-    el.addEventListener('mousedown', () => {
-        el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
-    })
-
-    el.addEventListener('mouseup', () => {
-        el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-    })
 })
