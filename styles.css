@@ -1,0 +1,261 @@
+:root {
+    --navbarh: 40px
+}
+
+* {
+    font-family: 'Jetbrains Mono' !important;
+    /* font-weight: bold */
+}
+
+body {
+    background-color: #161515;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--navbarh);
+}
+
+
+
+.carousel {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 100vw;
+    overflow: hidden;
+    display: flex;
+            > * {
+        flex: 0 0 100%;
+        }
+        &:hover .group {
+        animation-play-state: paused;
+        }
+}
+
+.gradient {
+    width: 100vw;
+    position: absolute;
+    height: 250px;
+    background: linear-gradient(to right, 
+        rgba(22, 21, 21, 1) 5%,   /* Fully opaque at the left border */
+        rgba(22, 21, 21, 0) 50%,  /* Fully transparent in the center */
+        rgba(22, 21, 21, 1) 95%  /* Fully opaque at the right border */
+    );
+    z-index: 10;
+    border: 10px solid white
+}
+
+.card {
+    width: 100%;
+    color: white;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+    padding: 20px;
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+
+    &:nth-child(1) {
+        background-image: url("placeholder.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    &:nth-child(2) {
+        background-image: url("placeholder.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    &:nth-child(3) {
+        background-image: url("placeholder.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 20s linear infinite;
+}
+
+@keyframes scrolling {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+
+.bio {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+/* CSS for Experiences Section */
+.experiences {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #121212;
+}
+.experience-card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 1rem;
+    flex: 1 1 500px; /* Fixed size for all cards */
+    margin: 1rem;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    max-width: 500px; /* Ensures all boxes remain the same size */
+    aspect-ratio: 3 / 4;
+}
+.experience-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.experience-card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+.experience-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.IE-break {
+    margin-top: 150px;
+    margin-bottom: 50px
+}
+
+.social-box {
+    flex: 1;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #9c9c9c55;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, bottom 0.3s ease-in-out, right 0.3s ease-in-out, background 0.3s;
+    width: auto;
+    min-width: 50px;
+    max-height: auto
+}
+
+.social-box:hover {
+    background-color: #62616185;
+    transform: scale(1.2) translateY(-10%) translateX(-10%);
+    transition: transform 0.3s, background 0.3s
+}
+
+.social-box img {
+    max-width: 30px;
+    padding: 5px;
+    transition: transform ease 0.3s, padding 0.3s
+}
+
+.social-box:hover img {
+    transform: scale(1.2) translateY(0%);
+    padding-left: 11px;
+    padding-right: 11px;
+    transition: padding-right 0.3s, padding-left 0.3s, transform 0.3s
+}
+
+.icon {
+    transition: transform 0.3s
+}
+
+.icon img:hover{
+    transform: translateY(-10%) scale(1.2);
+    transition: transform 0.3s;
+}
+
+.social-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: unset;
+}
+
+.social-box img {
+    padding: 5px;
+    display: block;
+    margin: auto;
+}
+
+.social-box img:nth-child(3) {
+    height: 50px !important;
+    width: 50px !important;
+    padding: 5px;
+    display: block;
+    margin: auto;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+
+
+
+#navbar {
+    border-left: 0px solid #2e2d2d;
+    border-right: 0px solid #2e2d2d;
+    border-bottom: 5px solid #2e2d2d;
+    border-radius: 0px 0px 15px 15px;
+    background-color: #2e2d2d;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s;
+    height: var(--navbarh);
+    z-index: 200;
+    margin-bottom: 20px;
+}
+
+#navbar a {
+    flex: 1;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 0 0 15px 15px;
+    width: 152.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s
+}
+
+#navbar a {
+    transition: transform 0.3s ease; /*Transition for transform*/
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+    transform: translateY(10%); /* Move the link down */
+    transition: transform 0.3s, background-color 0.3s; /* Add a transition for both */
+}
