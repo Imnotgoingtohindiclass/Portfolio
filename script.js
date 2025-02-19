@@ -61,25 +61,13 @@ observer.observe(document.getElementById("div2"), { childList: true, subtree: tr
 // });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const blob = document.getElementById("blob");
-    let mouseX = 0, mouseY = 0;
-    let blobX = 0, blobY = 0;
-    let delay = 2000; // 2 seconds delay
+const blob = document.getElementById("blob");
 
-    document.addEventListener("mousemove", (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-    });
+window.onpointermove = event => { 
+    const { clientX, clientY } = event;
 
-    function updateBlobPosition() {
-        setTimeout(() => {
-            blobX = mouseX;
-            blobY = mouseY;
-            blob.style.transform = `translate(${blobX}px, ${blobY}px)`;
-        }, delay);
-        requestAnimationFrame(updateBlobPosition);
-    }
-
-    updateBlobPosition();
-});
+    blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+    }, { duration: 3000, fill: "forwards" });
+};

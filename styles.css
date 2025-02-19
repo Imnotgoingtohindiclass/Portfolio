@@ -336,10 +336,12 @@ body {
     z-index: -100;
 }
 
-/* #blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+#blur {
+    top: 0%;
+    right: 0%;
+    height: 200vh;
+    width: 200vw;
+    position: fixed;
     z-index: -50;
     backdrop-filter: blur(12vmax);
-} */
+}
