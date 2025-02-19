@@ -14,17 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById("carousel");
     let items = Array.from(track.children);
     let index = 0;
-
     let itemWidth = items[0].getBoundingClientRect().width;
 
-    const firstClone = items[0].cloneNode(true);
-    const lastClone = items[items.length - 1].cloneNode(true);
-
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, items[0]);
-
+    track.append(items[0].cloneNode(true));
+    track.prepend(items[items.length - 1].cloneNode(true));
     items = Array.from(track.children);
-
     track.style.transform = `translateX(-${itemWidth}px)`;
 
     function updateCarousel() {
@@ -37,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 track.style.transition = "none";
                 track.style.transform = `translateX(-${itemWidth}px)`;
                 index = 0;
-            }, 2000);
+            }, 500);
         }
     }
 
