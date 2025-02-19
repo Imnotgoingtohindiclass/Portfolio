@@ -131,7 +131,7 @@ body {
     flex-direction: column;
     position: relative;
     width: 300px;  
-    background-color: #1e1e1e;
+    background-color: #212020;
     border-radius: 15px;
     padding: 0.25rem;
     flex: 1 1 500px; /* Fixed size for all cards */
@@ -184,9 +184,13 @@ background: radial-gradient(
     z-index: 1;
 }
 
+.experience-card-content {
+    background-color: red;
+}
+
 .experience-card > .experience-card-content {
-background-color: var(--card-color);
-border-radius: inherit;
+    background-color: var(--card-color);
+    border-radius: inherit;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
