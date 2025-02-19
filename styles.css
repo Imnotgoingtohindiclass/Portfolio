@@ -4,16 +4,21 @@
     --card-color: rgb(23, 23, 23);
 }
 
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-drag: none;
+}
 
 * {
-    font-family: 'Jetbrains Mono' !important;
+    font-family: 'Rubik' !important;
     /* font-weight: bold */
 
 }
 
 body {
     background-color: #161515;
-    color: white;
+    color: white !important;
     text-align: center;
     justify-content: center;
     margin: 0;
@@ -178,7 +183,7 @@ background: radial-gradient(
 .experience-card::after {  
 background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(200, 200, 200, 0.6),
+    rgba(255, 255, 255, 0.6),
     transparent 40%
     );
     z-index: 1;
@@ -364,3 +369,32 @@ background: radial-gradient(
     backdrop-filter: blur(12vmax);
 } */
 
+.experiences-readmore {
+    height: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#exp-readmore {
+    border: 2px solid white;
+    padding: 7px;
+    border-radius: 15px;
+    display: flex;
+    max-height: min-content;
+    justify-content: center;
+    align-items: center;
+}
+
+#exp-readmore img {
+    height: 30px;
+    aspect-ratio: 1 / 1;
+    filter: invert(1)
+}
+
+#exp-readmore p {
+    padding: 0px;
+    margin: 0px
+}

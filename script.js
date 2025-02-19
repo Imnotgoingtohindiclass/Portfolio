@@ -10,57 +10,6 @@ window.onscroll = function() {
         prevScrollpos = currentScrollPos;
 }
 
-// console.log(window.innerWidth)
-
-// function matchHeight() {
-//     let div1 = document.getElementById("gradient");
-//     let div2 = document.getElementById("card");
-
-//     if (!div1 || !div2) return; // Ensure both divs exist
-
-//     // Reset height to auto to allow recalculation in case of content changes
-//     div1.style.height = "auto";
-//     div2.style.height = "auto";
-
-//     // Get the new max height and apply it
-//     let maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
-//     div1.style.height = maxHeight + "px";
-//     div2.style.height = maxHeight + "px";
-// }
-
-// // Run when the page loads and when the window resizes
-// window.addEventListener("load", matchHeight);
-// window.addEventListener("resize", matchHeight);
-
-// // If the content inside divs might change dynamically, use a MutationObserver
-// const observer = new MutationObserver(matchHeight);
-// observer.observe(document.getElementById("div1"), { childList: true, subtree: true });
-// observer.observe(document.getElementById("div2"), { childList: true, subtree: true });
-
-
-// document.querySelectorAll(".experience-card").forEach(card => {
-//     card.addEventListener("mousemove", (e) => {
-//         const rect = card.getBoundingClientRect();
-//         const x = e.clientX - rect.left; 
-//         const y = e.clientY - rect.top;
-        
-//         // Adjust border color dynamically
-//         card.style.setProperty("--x", `${x}px`);
-//         card.style.setProperty("--y", `${y}px`);
-
-//         // Add glow effect dynamically
-//         card.style.boxShadow = `0 0 15px rgba(255, 204, 0, 0.8), 
-//                                 ${x / rect.width * 40 - 20}px 
-//                                 ${y / rect.height * 40 - 20}px 
-//                                 30px rgba(255, 204, 0, 0.6)`;
-//     });
-
-//     card.addEventListener("mouseleave", () => {
-//         card.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.5)";
-//     });
-// });
-
-
 document.getElementById("experiences").onmousemove = e => {
     for(const card of document.getElementsByClassName("experience-card")) {
     const rect = card.getBoundingClientRect(),
