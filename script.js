@@ -10,6 +10,45 @@ window.onscroll = function() {
         prevScrollpos = currentScrollPos;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("carousel");
+    let items = Array.from(track.children);
+    let index = 0;
+
+    let itemWidth = items[0].getBoundingClientRect().width;
+
+    const firstClone = items[0].cloneNode(true);
+    const lastClone = items[items.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, items[0]);
+
+    items = Array.from(track.children);
+
+    track.style.transform = `translateX(-${itemWidth}px)`;
+
+    function updateCarousel() {
+        index++;
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(-${(index + 1) * itemWidth}px)`;
+
+        if (index >= items.length - 2) {
+            setTimeout(() => {
+                track.style.transition = "none";
+                track.style.transform = `translateX(-${itemWidth}px)`;
+                index = 0;
+            }, 2000);
+        }
+    }
+
+    window.addEventListener("resize", () => {
+        itemWidth = items[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${(index + 1) * itemWidth}px)`;
+    });
+
+    setInterval(updateCarousel, 2500);
+});
+
 document.getElementById("experiences").onmousemove = e => {
     for(const card of document.getElementsByClassName("experience-card")) {
     const rect = card.getBoundingClientRect(),

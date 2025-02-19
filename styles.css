@@ -29,82 +29,36 @@ body {
     color: white;
 }
 
+hr {
+    width: 50vw !important;
+}
 
-
-.carousel {
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 100vw;
+.carousel-container {
+    width: 25vw;
+    aspect-ratio: 20 / 9;
     overflow: hidden;
-    display: flex;
-            > * {
-        flex: 0 0 100%;
-        }
-        &:hover .group {
-        animation-play-state: paused;
-        }
-}
-
-.gradient {
-    width: 100vw;
-    position: absolute;
-    height: 250px;
-    background: linear-gradient(to right, 
-        rgba(22, 21, 21, 1) 0%,   /* Fully opaque at the left border */
-        rgba(22, 21, 21, 0) 40%,
-        rgba(22, 21, 21, 0) 50%,  /* Fully transparent in the center */
-        rgba(22, 21, 21, 0) 60%,
-        rgba(22, 21, 21, 1) 100%  /* Fully opaque at the right border */
-    );
-    z-index: 10;
-    /* border: 10px solid white */
-}
-
-.card {
-    width: 100%;
-    color: white;
+    position: relative;
+    margin: auto;
     border-radius: 15px;
-    padding: 20px;
-    font-size: xx-large;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 16 / 9;
-    max-height: 200px;
-
-    &:nth-child(1) {
-        background-image: url("Images/placeholder.jpg");
-        background-size: cover;
-        background-position: center;
-    }
-
-    &:nth-child(2) {
-        background-image: url("Images/placeholder.jpg");
-        background-size: cover;
-        background-position: center;
-    }
-
-    &:nth-child(3) {
-        background-image: url("Images/placeholder.jpg");
-        background-size: cover;
-        background-position: center;
-    }
 }
-
-.group {
+.carousel-track {
     display: flex;
-    gap: 20px;
-    padding-right: 20px;
-    will-change: transform;
-    animation: scrolling 20s linear infinite;
+    transition: transform 2s ease-in-out;
+    width: 100%;
+    aspect-ratio: 20 / 9;
 }
-
-@keyframes scrolling {
-    0% {
-    transform: translateX(0);
-    }
-    100% {
-    transform: translateX(-100%);
-    }
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 20 / 9;
+    background: #3498db;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bio {
