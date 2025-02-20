@@ -109,24 +109,33 @@ hr {
     flex-shrink: 0;
 }
 
+.pagination-arrows {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    overflow: hidden;
+}
+
 .prev,
 .next {
+    transform: scale(1.5) translate(0,-50%);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px
 }
 
 .prev {
-    left: 10px;
+    left: 0px;
+    border-radius: 0px 15px 15px 0px;
 }
 
 .next {
-    right: 10px;
+    right:0px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 .dots {
@@ -144,6 +153,7 @@ hr {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 0.3s, background 0.3s;
+    filter: invert(1);
 }
 
 .dot.active {
