@@ -54,14 +54,9 @@ hr {
     width: 50vw !important;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
-body {
-    font-family: Arial, sans-serif;
-}
-
 .bio {
+    min-width: 40vw;
+    width: min-content;
     margin-left: 5vw;
     margin-right: 5vw;
 }
@@ -79,58 +74,85 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+
+}
+
+.intro-text h1 {
+    width: 100%;
+    height: 100%
 }
 
 .carousel-container {
-    width: 40vw;
-    aspect-ratio: 4 / 2.75;
-    overflow: hidden;
     position: relative;
-    margin: auto;
+    width: 600px;
+    padding-left: calc(25vw - 300px);
+    padding-right: calc(25vw - 300px);
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow: hidden;
     border-radius: 15px;
-    justify-content: center;
-    align-items: center;
 }
 
-.carousel-track {
+.carousel {
     display: flex;
-    width: 100%;
-    aspect-ratio: 4 / 2.75;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
-    width: 100%;
-    aspect-ratio: 4 / 2.75;
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-item img {
-    height: 100%;
-    width: 100%;
+.carousel img {
+    width: 600px;
+    height: 400px;
     object-fit: cover;
-    object-position: center;
+    flex-shrink: 0;
 }
 
-.carousel-item p {
-    font-size: 25px;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-    z-index: 1000000;
+.prev,
+.next {
     position: absolute;
-    margin: 0;
     top: 50%;
     transform: translateY(-50%);
-    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
 }
 
-.carousel-item {
-    display: none;
+.prev {
+    left: 10px;
 }
-.carousel-item.active {
-    display: block;
+
+.next {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.dot.active {
+    background: #333;
+    opacity: 1;
+}
+
+.dot:hover {
+    opacity: 1;
 }
 
 /* CSS for Experiences Section */

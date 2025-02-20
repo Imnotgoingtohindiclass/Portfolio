@@ -15,6 +15,59 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+const carousel = document.querySelector('.carousel');
+const images = document.querySelectorAll('.carousel img');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const dotsContainer = document.querySelector('.dots');
+let index = 0;
+let isAnimating = false;
+let totalImages = images.length;
+
+images.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    dot.dataset.index = i;
+    dot.addEventListener('click', () => moveTo(i));
+    dotsContainer.appendChild(dot);
+});
+
+function updateCarousel() {
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(-${index * 600}px)`;
+    updateDots();
+}
+
+function moveTo(i) {
+    index = i;
+    updateCarousel();
+}
+
+function updateDots() {
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.classList.remove('active');
+    });
+    document.querySelector(`.dot[data-index='${index}']`).classList.add('active');
+}
+
+prev.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+    index = (index - 1 + totalImages) % totalImages;
+    updateCarousel();
+    setTimeout(() => { isAnimating = false; }, 500);
+});
+
+next.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+    index = (index + 1) % totalImages;
+    updateCarousel();
+    setTimeout(() => { isAnimating = false; }, 500);
+});
+
+updateDots();
+
 document.getElementById("experiences").onmousemove = e => {
     for(const card of document.getElementsByClassName("experience-card")) {
     const rect = card.getBoundingClientRect(),
