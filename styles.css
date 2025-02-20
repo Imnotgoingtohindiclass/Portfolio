@@ -129,32 +129,6 @@ hr {
     right: 10px;
 }
 
-.dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s, background 0.3s;
-}
-
-.dot.active {
-    background: #333;
-    opacity: 1;
-}
-
-.dot:hover {
-    opacity: 1;
-}
-
 /* CSS for Experiences Section */
 
 #experiences {
