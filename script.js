@@ -1,46 +1,56 @@
-var prevScrollpos = window.pageYOffSet || document.documentElement.scrollTop;
-window.onscroll = function() {
-    var currentScrollPos = window.pageYOffSet || document.documentElement.scrollTop;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } 
-    else {
-        document.getElementById("navbar").style.top = "-50px";
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    var prevScrollpos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+
+    navbar.style.top = "-50px";
+
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            navbar.style.top = "0";
+        } else {
+            navbar.style.top = "-50px";
+        }
         prevScrollpos = currentScrollPos;
-}
+    };
+});
 
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("carousel");
-    let items = Array.from(track.children);
-    let index = 0;
-    let itemWidth = items[0].getBoundingClientRect().width;
-
-    track.append(items[0].cloneNode(true));
-    track.prepend(items[items.length - 1].cloneNode(true));
-    items = Array.from(track.children);
-    track.style.transform = `translateX(-${itemWidth}px)`;
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let interval;
 
     function updateCarousel() {
-        index++;
-        track.style.transition = "transform 0.5s ease-in-out";
-        track.style.transform = `translateX(-${(index + 1) * itemWidth}px)`;
+        document.querySelector('.carousel-item.active')?.classList.remove('active');
+        items[currentIndex].classList.add('active');
+    }
 
-        if (index >= items.length - 2) {
-            setTimeout(() => {
-                track.style.transition = "none";
-                track.style.transform = `translateX(-${itemWidth}px)`;
-                index = 0;
-            }, 500);
+    function autoScroll() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }
+
+    function startAutoScroll() {
+        stopAutoScroll();
+        interval = setInterval(autoScroll, 3000);
+    }
+
+    function stopAutoScroll() {
+        if (interval) {
+            clearInterval(interval);
         }
     }
 
-    window.addEventListener("resize", () => {
-        itemWidth = items[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${(index + 1) * itemWidth}px)`;
+    updateCarousel();
+    startAutoScroll();
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            stopAutoScroll();
+        } else {
+            startAutoScroll();
+        }
     });
-
-    setInterval(updateCarousel, 2500);
 });
 
 document.getElementById("experiences").onmousemove = e => {

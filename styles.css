@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --navbarh: 40px;
+    --bg-color: rgb(20, 20, 20);
+    --card-color: rgb(23, 23, 23);
+}
+
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+* {
+    font-family: 'Lato', sans-serif !important;
+    /* font-weight: bold; */
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 :root {
     --navbarh: 40px;
@@ -25,7 +46,7 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
-    padding-top: var(--navbarh);
+    /* padding-top: var(--navbarh); */
     color: white;
 }
 
@@ -33,9 +54,36 @@ hr {
     width: 50vw !important;
 }
 
+body {
+    font-family: Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.bio {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.intro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+.intro-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .carousel-container {
-    width: 25vw;
-    aspect-ratio: 20 / 9;
+    width: 40vw;
+    aspect-ratio: 4 / 2.75;
     overflow: hidden;
     position: relative;
     margin: auto;
@@ -43,27 +91,46 @@ hr {
     justify-content: center;
     align-items: center;
 }
+
 .carousel-track {
     display: flex;
-    transition: transform 2s ease-in-out;
     width: 100%;
-    aspect-ratio: 20 / 9;
-}
-.carousel-item {
-    width: 100%;
-    aspect-ratio: 20 / 9;
-    background: #3498db;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    aspect-ratio: 4 / 2.75;
 }
 
-.bio {
-    margin-left: 15vw;
-    margin-right: 15vw;
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 4 / 2.75;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item p {
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    z-index: 1000000;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.carousel-item {
+    display: none;
+}
+.carousel-item.active {
+    display: block;
 }
 
 /* CSS for Experiences Section */
@@ -335,7 +402,7 @@ background: radial-gradient(
 }
 
 #exp-readmore {
-    border: 2px solid white;
+    border: 1px solid rgb(200, 200, 200);
     padding: 7px;
     border-radius: 15px;
     display: flex;
