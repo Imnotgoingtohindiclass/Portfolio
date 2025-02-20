@@ -15,44 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
-    let interval;
-
-    function updateCarousel() {
-        document.querySelector('.carousel-item.active')?.classList.remove('active');
-        items[currentIndex].classList.add('active');
-    }
-
-    function autoScroll() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    }
-
-    function startAutoScroll() {
-        stopAutoScroll();
-        interval = setInterval(autoScroll, 3000);
-    }
-
-    function stopAutoScroll() {
-        if (interval) {
-            clearInterval(interval);
-        }
-    }
-
-    updateCarousel();
-    startAutoScroll();
-    document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-            stopAutoScroll();
-        } else {
-            startAutoScroll();
-        }
-    });
-});
-
 document.getElementById("experiences").onmousemove = e => {
     for(const card of document.getElementsByClassName("experience-card")) {
     const rect = card.getBoundingClientRect(),
