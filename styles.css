@@ -60,6 +60,19 @@ hr {
     width: min-content;
     margin-left: calc(20vw / 3);
     margin-right: calc(20vw / 6);
+    text-align: center;
+}
+
+#home {
+    width: fit-content;
+    margin-left: calc(20vw / 3);
+    margin-right: calc(20vw / 6);
+    font-family: 'Montserrat', serif; 
+    font-weight: 900; 
+    font-size: 70px; 
+    margin-bottom: 50px; 
+    margin-top: 0px;
+    text-align: center;
 }
 
 .intro-page {
