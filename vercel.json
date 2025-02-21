@@ -3,10 +3,6 @@
         {
         "src": "/Images/(.*)", 
         "status": 403
-        },
-        {
-        "src": "/script.js",
-        "status": 403
         }
     ]
 }
