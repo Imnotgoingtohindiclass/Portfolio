@@ -193,46 +193,6 @@ hr {
     transition: filter 0.3s ease-in-out;
 }
 
-.carousel-item:hover img {
-    filter: brightness(50%);
-}
-
-.overlay {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 16px;
-    transition: bottom 0.3s ease-in-out;
-}
-
-.pagination-arrows:hover .overlay {
-    bottom: 0;
-}
-
-.overlay a {
-    display: inline-block;
-    margin-top: 5px;
-    text-decoration: none;
-    color: white;
-}
-
-.arrow {
-    width: 24px;
-    height: 24px;
-    fill: white;
-    transition: transform 0.3s ease-in-out;
-}
-
-.overlay a:hover .arrow {
-    transform: translateX(5px);
-}
-
-
 /* CSS for Experiences Section */
 
 #experiences {
@@ -298,7 +258,7 @@ hr {
 .experience-card::before {
 background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.1),
     transparent 40%
     );
     z-index: 3;
