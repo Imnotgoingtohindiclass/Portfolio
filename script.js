@@ -111,8 +111,11 @@ document.getElementById("experiences").onmousemove = e => {
     };
 }
 
+const startTime = performance.now();
 console.log("User entered the website at: " + new Date().toLocaleString());
 
 document.addEventListener("DOMContentLoaded", function() {
+    const endTime = performance.now();
     console.log("Page fully loaded at: " + new Date().toLocaleString());
+    console.log("Page load time: " + (endTime - startTime) + " ms");
 });
