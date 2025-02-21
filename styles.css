@@ -131,20 +131,35 @@ hr {
     transition: background 0.2s;
 }
 
-.prev:hover,
-.next:hover {
-    background: rgba(0, 0, 0, 0.1);
-    transition: background 0.2s;
+.carousel-wrapper:hover .prev {
+    transform: scale(1.5) translate(0,-50%) translateX(0);
+    transition: transform 0.3s;
+}
+
+.carousel-wrapper:hover .next {
+    right:0px;
+    transform: scale(1.5) translate(0,-50%) translateX(0);
+    transition: transform 0.3s
 }
 
 .prev {
     left: 0px;
     border-radius: 0px 15px 15px 0px;
+    transform: scale(1.5) translate(0,-50%) translateX(-20px);
+    transition: transform 0.3s
 }
 
 .next {
     right:0px;
     border-radius: 15px 0px 0px 15px;
+    transform: scale(1.5) translate(0,-50%) translateX(20px);
+    transition: transform 0.3s
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transition: background 0.2s;
 }
 
 .dots {
