@@ -136,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.addEventListener("scroll", function () {
     const myDiv = document.querySelector(".social-box");
-    if (window.scrollY > 10) {
+    if (window.scrollY > 100
+    ) {
         myDiv.style.transform = "scale(1) translateX(0px)"; // scrolled
     } else {
         myDiv.style.transform = "scale(0) translateX(200px)"; // top
