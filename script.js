@@ -88,8 +88,8 @@ cards.forEach(el => {
     el.addEventListener('mousemove', (e) => {
         const xVal = e.layerX
         const yVal = e.layerY
-        const yRotation = 5 * ((xVal - width / 2) / width)
-        const xRotation = -5 * ((yVal - height / 2) / height)
+        const yRotation = 3.5 * ((xVal - width / 2) / width)
+        const xRotation = -3.5 * ((yVal - height / 2) / height)
         const transformString = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`
         el.style.transform = transformString
     })
