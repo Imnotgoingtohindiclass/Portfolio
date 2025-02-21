@@ -1,12 +1,13 @@
 {
     "routes": [
         {
-        "src": "^/script.js$", 
-        "status": 403
+        "src": "^/script.js$",
+        "dest": "/404",
+        "status": 307
         },
         {
         "src": "^/Images/.*$", 
         "status": 403
         }
     ]
-}
+} 
