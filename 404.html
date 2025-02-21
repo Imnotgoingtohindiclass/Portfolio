@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap">
+    <style>
+        :root {
+            --navbarh: 40px;
+            --bg-color: rgb(20, 20, 20);
+            --card-color: rgb(23, 23, 23);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        
+        * {
+            font-family: 'Lato', sans-serif !important;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: white !important;
+            text-align: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            background: var(--card-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        
+        p {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+        
+        .go-home-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #go-home {
+            border: 1px solid rgb(200, 200, 200);
+            padding: 7px 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            background: var(--card-color);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        
+        #go-home:hover {
+            background: #333;
+        }
+        
+        #go-home img {
+            height: 20px;
+            aspect-ratio: 1 / 1;
+            filter: invert(1);
+            margin-right: 8px;
+        }
+        
+        #go-home p {
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <div class="go-home-container">
+            <a id="go-home" href="/">
+                <img src="/Images/arrow-right-short.svg" alt="Home">
+                <p>Go Back Home</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
