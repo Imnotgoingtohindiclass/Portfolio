@@ -1,13 +1,18 @@
 {
     "routes": [
         {
-        "src": "^/script.js$",
-        "dest": "/404",
-        "status": 307
-        },
-        {
         "src": "^/Images/.*$", 
         "status": 403
         }
+    ],
+    "headers": [
+        {
+        "source": "/script.js",
+        "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "https://rishavganguly-portfolio.vercel.app" },
+            { "key": "Access-Control-Allow-Methods", "value": "GET" },
+            { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+        ]
+        }
     ]
-} 
+}
