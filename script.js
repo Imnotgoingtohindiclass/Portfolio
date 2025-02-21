@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+const flag = "picoCTF{r15h4v_p0rtf0l10_w3b51t3}"
+
 const carousel = document.querySelector('.carousel');
 const images = document.querySelectorAll('.carousel img');
 const prev = document.querySelector('.prev');
