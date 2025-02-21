@@ -110,3 +110,9 @@ document.getElementById("experiences").onmousemove = e => {
     card.style.setProperty("--mouse-y", `${y}px`);
     };
 }
+
+console.log("User entered the website at: " + new Date().toLocaleString());
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Page fully loaded at: " + new Date().toLocaleString());
+});
