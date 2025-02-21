@@ -8,6 +8,7 @@
 }
 
 html {
+    scrollbar-width: 0px;
     scroll-behavior: smooth;
     user-select: none;
     -webkit-user-drag: none;

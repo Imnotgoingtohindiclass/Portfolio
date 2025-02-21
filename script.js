@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     var prevScrollpos = window.pageYOffset;
     var navbar = document.getElementById("navbar");
@@ -111,25 +110,25 @@ document.getElementById("experiences").onmousemove = e => {
     };
 }
 
-const startTime = performance.now();
-console.log("User entered the website at: " + new Date().toLocaleString());
+// const startTime = performance.now();
+// console.log("User entered the website at: " + new Date().toLocaleString());
 
-let lastLoggedProgress = 0;
-const observer = new PerformanceObserver((list) => {
-    list.getEntries().forEach((entry) => {
-        if (entry.name === 'first-contentful-paint' || entry.name === 'largest-contentful-paint') {
-            let progress = Math.round((entry.startTime / performance.timing.domComplete) * 100);
-            if (progress >= lastLoggedProgress + 10) {
-                console.log(`Page load progress: ${progress}%`);
-                lastLoggedProgress = progress;
-            }
-        }
-    });
-});
-observer.observe({ type: "paint", buffered: true });
+// let lastLoggedProgress = 0;
+// const observer = new PerformanceObserver((list) => {
+//     list.getEntries().forEach((entry) => {
+//         if (entry.name === 'first-contentful-paint' || entry.name === 'largest-contentful-paint') {
+//             let progress = Math.round((entry.startTime / performance.timing.domComplete) * 100);
+//             if (progress >= lastLoggedProgress + 10) {
+//                 console.log(`Page load progress: ${progress}%`);
+//                 lastLoggedProgress = progress;
+//             }
+//         }
+//     });
+// });
+// observer.observe({ type: "paint", buffered: true });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const endTime = performance.now();
-    console.log("Page fully loaded at: " + new Date().toLocaleString());
-    console.log("Page load time: " + (endTime - startTime) + " ms");
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     const endTime = performance.now();
+//     console.log("Page fully loaded at: " + new Date().toLocaleString());
+//     console.log("Page load time: " + (endTime - startTime) + " ms");
+// });
