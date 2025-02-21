@@ -1,10 +1,4 @@
 {
-    "routes": [
-        {
-        "src": "^/Images/.*$", 
-        "status": 403
-        }
-    ],
     "headers": [
         {
         "source": "/script.js",
