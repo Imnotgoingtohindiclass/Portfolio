@@ -57,8 +57,8 @@ hr {
 .bio {
     min-width: 40vw;
     width: min-content;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: calc(20vw / 3);
+    margin-right: calc(20vw / 6);
 }
 
 .intro-page {
@@ -85,13 +85,14 @@ hr {
 
 .carousel-container {
     position: relative;
-    width: 600px;
-    padding-left: calc(25vw - 300px);
-    padding-right: calc(25vw - 300px);
+    width: 40vw;
+    padding-left: calc(20vw / 6);
+    padding-right: calc(20vw / 3);
     overflow: hidden;
 }
 
 .carousel-wrapper {
+    width: 40vw;
     display: flex;
     overflow: hidden;
     border-radius: 15px;
@@ -103,15 +104,15 @@ hr {
 }
 
 .carousel img {
-    width: 600px;
-    height: 400px;
+    width: 40vw;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
     flex-shrink: 0;
 }
 
 .pagination-arrows {
     position: absolute;
-    width: 600px;
+    width: 40vw;
     height: 100%;
     overflow: hidden;
 }

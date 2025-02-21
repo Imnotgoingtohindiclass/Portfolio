@@ -35,7 +35,7 @@ images.forEach((_, i) => {
 
 function updateCarousel() {
     carousel.style.transition = 'transform 0.5s ease-in-out';
-    carousel.style.transform = `translateX(-${index * 600}px)`;
+    carousel.style.transform = `translateX(-${index * 40}vw)`;
     updateDots();
 }
 
@@ -89,8 +89,8 @@ cards.forEach(el => {
     el.addEventListener('mousemove', (e) => {
         const xVal = e.layerX
         const yVal = e.layerY
-        const yRotation = 3 * ((xVal - width / 2) / width)
-        const xRotation = -3 * ((yVal - height / 2) / height)
+        const yRotation = 5 * ((xVal - width / 2) / width)
+        const xRotation = -5 * ((yVal - height / 2) / height)
         const transformString = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`
         el.style.transform = transformString
     })
