@@ -9,7 +9,12 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="loading-screen"></div>
+    <div class="loader-wrapper" id="loader-wrapper">
+        <div class="loading-text">Loading, please wait...</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+    </div>
     <div id="top-of-page"></div>
     <!-- <div id="blob"></div>
     <div id="blur"></div> -->
@@ -29,7 +34,7 @@
                 driven by<span style="font-size: larger; font-weight: 400;"> Innovation</span>. 
                 I love exploring technology, breaking things (ethically!), <br> building solutions that make a difference.
                 <br><br>
-                <span style="font-size:28; font-weight: 200;">
+                <span id="me" style="font-size:28; font-weight: 200;">
                     IDP Engineering<sup>+</sup> | SYFC Member | SSTMUN 24 Vice-Chair 
                 </span>
             </p>
