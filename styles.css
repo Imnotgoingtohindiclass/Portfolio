@@ -67,17 +67,21 @@ hr {
     justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
-    z-index: 9999;
+    z-index: 99999999;
 }
 
 .loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 20px;
     margin-bottom: 20px;
 }
 
 .loader-wrapper .progress-bar {
     width: 60%;
-    height: 20px;
+    height: 50px;
     background-color: #161515;
     border-radius: 20px;
     overflow: hidden;
@@ -279,7 +283,7 @@ hr {
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;  
+    gap: 10px;
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -297,12 +301,12 @@ hr {
     height: 700px;
     flex-direction: column;
     position: relative;
-    width: 300px;  
+    width: 450px;  
     background-color: #212020;
     border-radius: 15px;
-    padding: 0.25rem;
+    padding: 10px;
     flex: 1 1 500px; /* Fixed size for all cards */
-    margin: 0.25rem;
+    /* margin: 0.25rem; */
     text-align: center;
     color: #fff;
     font-size: larger;
@@ -461,7 +465,7 @@ background: radial-gradient(
     object-fit:fill;
 }
 
-#navbar {
+/* #navbar {
     border-left: 0px solid #2e2d2d;
     border-right: 0px solid #2e2d2d;
     border-bottom: 5px solid #2e2d2d;
@@ -497,15 +501,15 @@ background: radial-gradient(
 }
 
 #navbar a {
-    transition: transform 0.3s ease; /*Transition for transform*/
+    transition: transform 0.3s ease; /*Transition for transform
 }
 
 #navbar a:hover {
     background-color: #ddd;
     color: black;
-    transform: translateY(10%); /* Move the link down */
-    transition: transform 0.3s, background-color 0.3s; /* Add a transition for both */
-}
+    transform: translateY(10%); /* Move the link down 
+    transition: transform 0.3s, background-color 0.3s; /* Add a transition for both
+} */
 
 /* 
 #blob {
@@ -641,27 +645,6 @@ background: radial-gradient(
     }
     .carousel-container {
         padding: 0 15px;
-    }
-    .carousel-wrapper, .carousel img {
-        width: 100%;
-    }
-}
-
-/* Desktop Styles */
-@media (min-width: 1025px) {
-    .intro-page {
-        flex-direction: row;
-        padding: 40px;
-    }
-    .intro-text {
-        width: 50%;
-        padding: 10px;
-    }
-    .intro-text h1 {
-        font-size: 2.5rem;
-    }
-    .carousel-container {
-        padding: 0 20px;
     }
     .carousel-wrapper, .carousel img {
         width: 100%;

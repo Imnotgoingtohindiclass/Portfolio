@@ -15,7 +15,7 @@
 //     };
 // });
 
-let minLoadTime = 1000;
+let minLoadTime = 250;
 let startTime = Date.now();
 let progressBar = document.getElementById("progress");
 let interval = setInterval(() => {
@@ -24,11 +24,17 @@ let interval = setInterval(() => {
     progressBar.style.width = progress + "%";
 }, 100);
 
+// Disable scrolling
+document.body.style.overflow = "hidden";
+
 function hideLoader() {
     clearInterval(interval);
     document.getElementById("loader-wrapper").style.opacity = "0";
     setTimeout(function() {
         document.getElementById("loader-wrapper").style.display = "none";
+        
+        // Re-enable scrolling
+        document.body.style.overflow = "";
     }, 500);
 }
 
