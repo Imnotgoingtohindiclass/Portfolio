@@ -15,7 +15,7 @@
 //     };
 // });
 
-let minLoadTime = 250;
+let minLoadTime = 50;
 let startTime = Date.now();
 let progressBar = document.getElementById("progress");
 let interval = setInterval(() => {
@@ -44,8 +44,6 @@ window.addEventListener("load", function() {
     setTimeout(hideLoader, remainingTime);
 });
 
-const flag = "picoCTF{r15h4v_p0rtf0l10_w3b51t3}"
-
 const carousel = document.querySelector('.carousel');
 const images = document.querySelectorAll('.carousel-item');
 const prev = document.querySelector('.prev');
@@ -56,6 +54,7 @@ const paginationArrows = document.querySelector('.pagination-arrows');
 let index = 0;
 let isAnimating = false;
 const totalImages = images.length;
+let autoSlideTimeout;
 
 let startX = 0;
 let currentX = 0;
@@ -71,7 +70,10 @@ const dots = Array.from({ length: totalImages }, (_, i) => {
     const dot = document.createElement('span');
     dot.classList.add('dot');
     dot.dataset.index = i;
-    dot.addEventListener('click', () => moveTo(i));
+    dot.addEventListener('click', () => {
+        moveTo(i);
+        resetAutoSlide();
+    });
     dotsContainer.appendChild(dot);
     return dot;
 });
@@ -99,6 +101,7 @@ prev.addEventListener('click', () => {
     isAnimating = true;
     index = (index - 1 + totalImages) % totalImages;
     updateCarousel();
+    resetAutoSlide();
 });
 
 next.addEventListener('click', () => {
@@ -106,6 +109,7 @@ next.addEventListener('click', () => {
     isAnimating = true;
     index = (index + 1) % totalImages;
     updateCarousel();
+    resetAutoSlide();
 });
 
 // Reset `isAnimating` after animation
@@ -113,8 +117,22 @@ carousel.addEventListener('transitionend', () => {
     isAnimating = false;
 });
 
-// Initialize dots
+// Auto slide function
+function autoSlide() {
+    autoSlideTimeout = setTimeout(() => {
+        next.click();
+    }, 5000);
+}
+
+function resetAutoSlide() {
+    clearTimeout(autoSlideTimeout);
+    autoSlide();
+}
+
+// Initialize dots and start auto-slide
 updateDots();
+autoSlide();
+
 
 // Experiences hover effect
 
